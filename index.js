@@ -8,8 +8,10 @@ var utils = require('./darrt/lib/utils.js');
 var port = process.env.PORT || 8181;
 
 //******************************************
-// start of auth support - implementação do auth - aqui aplicado como middleware do express
+// start of auth support - implementação do auth
 var secure = require('./darrt/lib/api-auth.js');
+
+// registrando a função jwtCheck como middleware no pipeline do Express
 app.use(secure.jwtCheck);
 // end of auth support
 //******************************************

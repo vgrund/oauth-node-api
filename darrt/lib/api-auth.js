@@ -23,9 +23,9 @@ var auth = {};
 auth.cache = true;
 auth.rateLimit = true;
 auth.requestsPerMinute = 5;
-auth.jwksUri = '<DOMAIN>/.well-known/jwks.json';
-auth.audience = '<IDENTIFIER>';
-auth.issuer = '<DOMAIN>';
+auth.jwksUri = 'dev-9ql57qhw.us.auth0.com/.well-known/jwks.json';
+auth.audience = 'https://dev-9ql57qhw.us.auth0.com/api/v2/';
+auth.issuer = 'dev-9ql57qhw.us.auth0.com';
 auth.algorithms = ['RS256'];
 
 // auth support
