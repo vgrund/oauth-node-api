@@ -18,7 +18,7 @@ npm install -s jsonwebtoken
 
 npm install -s express-jwt
 
-npm install -s express-jwt-atuhz
+npm install -s express-jwt-authz
 
 npm install -s body-parser
 
