@@ -7,7 +7,7 @@ date
 ###################################################
 # local vars
 token="auth0-token.env"
-env="auth0.env"
+env="./auth0.env"
 
 ###################################################
 # load env values
@@ -16,7 +16,9 @@ then
   echo "Missing $env"
   exit 1
 fi
+
 source $env
+. ./$env
 
 ###################################################
 # delete any existing token file
@@ -28,8 +30,8 @@ fi
 ###################################################
 # run request
 echo ": requesting token from Auth0 ..."
+
 curl \
-  --silent \
   --url $url \
   --request POST \
   --header "content-type:application/json" \
@@ -40,6 +42,7 @@ curl \
     \"audience\":\"$audience\", 
     \"grant_type\":\"client_credentials\"
   }"
+
 
 ###################################################
 # all done

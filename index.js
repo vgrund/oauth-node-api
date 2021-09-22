@@ -5,7 +5,7 @@ var cors = require('cors');
 // resources = Rotas da API
 var resources = require('./darrt/resources');
 var utils = require('./darrt/lib/utils.js');
-var port = process.env.PORT || 8181;
+var port = process.env.PORT || 8484;
 
 //******************************************
 // start of auth support - implementação do auth
