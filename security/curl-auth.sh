@@ -30,8 +30,7 @@ echo
 
 #################################################o#
 # local vars
-auth="curl-auth.env"
-
+auth="./curl-auth.env"
 ###################################################
 # load env values
 if [ ! -f $auth ]
@@ -39,8 +38,9 @@ then
   echo "Missing $auth"
   exit 1
 fi
-source $auth
-. ./$auth
+
+. $auth
+
 ###################################################
 # command line values
 while getopts ":u:m:a:c:d:" opt; do
@@ -61,13 +61,6 @@ done
 
 ###################################################
 # run request
-echo "...: requesting $method $url $data"
-echo "aqui!!!!!!!!!!!!!!!!!"
-echo "URL: $url"
-echo "METHOD: $method"
-echo "DATA: $data"
-echo "aqui2!!!!!!!!!!!!!!!!!"
-
 curl --url $url --request $method --header "content-type:$contentType" --header "accept:$accept" --header "authorization: Bearer $token" --data "$data"
 
 ###################################################
